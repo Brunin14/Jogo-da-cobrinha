@@ -2,12 +2,13 @@ let tela = document.getElementById("tela");
         let contexto = tela.getContext("2d");
         let tamanho = 20;
         let cobrinha = [{ x: 200, y: 200 }];
-        let direcao = "direita";
+        let direcao = "cima";
         let maca = { x: 100, y: 100 };
         let pontuacao = 0;
         let contador = document.getElementById("contador");
         let botaoRecomecar = document.getElementById("botao-recomecar");
         let dificuldade = document.getElementById("dificil");
+        let dificuldade2 = document.getElementById("facil");
         let velocidade = 100;
         let intervalo;
 
@@ -65,27 +66,35 @@ let tela = document.getElementById("tela");
 
         function recomeçarJogo() {
             cobrinha = [{ x: 200, y: 200 }];
-            direcao = "direita";
             maca = { x: 100, y: 100 };
             pontuacao = 0;
             contador.textContent = "Maçãs comidas: " + pontuacao;
             iniciarJogo();
         }
 
-        function telaaa(){
+        function nivel1(){
             cobrinha = [{ x: 200, y: 200 }];
-            direcao = "direita";
+            maca = { x: 200, y: 200 };
+            pontuacao = 0;
+            contador.textContent = "Maçãs comidas: " + pontuacao;
+            tamanho = 20;
+            iniciarJogo();
+        }
+
+        function nivel2(){
+            cobrinha = [{ x: 200, y: 200 }];
             maca = { x: 200, y: 200 };
             pontuacao = 0;
             contador.textContent = "Maçãs comidas: " + pontuacao;
             tamanho = 10;
-            velocidade = 100;
             iniciarJogo();
         }
         
 
         botaoRecomecar.addEventListener("click", recomeçarJogo);
-        dificuldade.addEventListener("click", telaaa);
+        dificuldade.addEventListener("click", nivel2);
+        facil.addEventListener("click", nivel1);
+
 
 
         iniciarJogo();
