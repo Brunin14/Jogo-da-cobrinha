@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #222;
+    overflow-y: hidden;
+}
+.container {
+    text-align: center;
+}
+#tela {
+    background-color: #000;
+}
+#contador {
+    color: white;
+    font-size: 20px;
+    margin: 10px;
+}
+#botao-recomecar {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
