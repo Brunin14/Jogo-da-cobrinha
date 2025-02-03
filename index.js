@@ -43,13 +43,13 @@ let tela = document.getElementById("tela");
 
         function desenhar() {
             contexto.clearRect(0, 0, tela.width, tela.height);
-            contexto.fillStyle = "black";
+            contexto.fillStyle = "DarkGreen" ;
             contexto.fillRect(0, 0, tela.width, tela.height);
             
             contexto.fillStyle = "red";
             contexto.fillRect(maca.x, maca.y, tamanho, tamanho);
             
-            contexto.fillStyle = "green";
+            contexto.fillStyle = "CadetBlue";
             cobrinha.forEach(parte => contexto.fillRect(parte.x, parte.y, tamanho, tamanho));
         }
 
@@ -69,12 +69,23 @@ let tela = document.getElementById("tela");
             maca = { x: 100, y: 100 };
             pontuacao = 0;
             contador.textContent = "Maçãs comidas: " + pontuacao;
-            let tamanho = 10;
+            iniciarJogo();
+        }
+
+        function telaaa(){
+            cobrinha = [{ x: 200, y: 200 }];
+            direcao = "direita";
+            maca = { x: 200, y: 200 };
+            pontuacao = 0;
+            contador.textContent = "Maçãs comidas: " + pontuacao;
+            tamanho = 10;
+            velocidade = 100;
             iniciarJogo();
         }
         
 
         botaoRecomecar.addEventListener("click", recomeçarJogo);
+        dificuldade.addEventListener("click", telaaa);
 
 
         iniciarJogo();
